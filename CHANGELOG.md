@@ -2,6 +2,10 @@
 
 All notable changes to the project will be documented in this file.
 
+## [1.0.1] - 2025-02-02
+### Fixed
+- Bugfix: Renamed "example.nodemon-alternative.json" to "nodemon-alternative.json" in package.json "files"
+
 ## [1.0.0] - 2025-02-02
 ### Added
 - Initial release of nodemon-alternative.

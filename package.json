@@ -1,6 +1,6 @@
 {
 	"name": "@logicssoftwaregmbh/nodemon-alternative",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A more aggressive Node.js process manager and file watcher with built-in Windows port management",
 	"type": "module",
 	"main": "src/index.js",
@@ -12,7 +12,7 @@
 		"src",
 		"README.md",
 		"LICENSE",
-		"example.nodemon-alternative.json"
+		"nodemon-alternative.json"
 	],
 	"scripts": {
 		"start": "node bin/cli.js"
