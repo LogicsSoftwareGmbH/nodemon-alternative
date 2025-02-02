@@ -69,18 +69,9 @@ The configuration file (nodemon-alternative.json) supports the following paramet
 - **script** (string, required): The entry point to run (e.g., "src/server.js")
 - **watch** (string | array): Files or directories to monitor for changes
 - **ignore** (string[] | string): Glob patterns for files to ignore. Use `**/node_modules/**` to ignore all node_modules directories and their contents
-- **delay** (object): Controls file change detection behavior
-  - **stabilityThreshold** (number): Time in ms to wait for file to settle
-  - **pollInterval** (number): Time in ms between polls
-
-`delay` object has two properties:
-
-- `stabilityThreshold` (Default: 500ms): Defines how long a file size must remain constant before the watcher emits an event. This helps ensure the file is completely written before triggering a restart. For example, when saving large files, the watcher will wait until the file size hasn't changed for 500ms before considering it "complete".
-
-- `pollInterval` (Default: 100ms): Specifies how frequently the watcher should check the file size when awaiting write completion. A lower value provides faster response but increases system load, while a higher value reduces system load but might delay detection of file completion.
-
-These settings are particularly important when watching large files or when dealing with editors that perform atomic writes.
-
+- **delay** (object): Controls file change detection behavior, according to https://github.com/paulmillr/chokidar/tree/3.6.0?tab=readme-ov-file#performance - These settings are particularly important when watching large files or when dealing with editors that perform atomic writes:
+  - **stabilityThreshold** (number in ms): Defines how long a file size must remain constant before the watcher emits an event. This helps ensure the file is completely written before triggering a restart. For example, when saving large files, the watcher will wait until the file size hasn't changed for 500ms before considering it "complete".
+  - **pollInterval** (number in ms): Specifies how frequently the watcher should check the file size when awaiting write completion. A lower value provides faster response but increases system load, while a higher value reduces system load but might delay detection of file completion.
 - **port** (number): The port your application runs on. This is crucial for proper port cleanup on Windows
 
 Example configuration:
@@ -137,4 +128,4 @@ MIT © Logics Software GmbH
 ## Author
 
 Logics Software GmbH
-[https://www.logics-connect.de/](https://www.logics-connect.de/)
+<br>[https://www.logics-connect.de/](https://www.logics-connect.de/)
