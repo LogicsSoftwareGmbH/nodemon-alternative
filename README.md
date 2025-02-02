@@ -34,18 +34,71 @@ npm install --save-dev @logicssoftwaregmbh/nodemon-alternative
 
 ## Quick Start
 
-1. Ensure the configuration file is named `nodemon-alternative.json`:
-```bash
-# Copy the config file into your project root as 'nodemon-alternative.json'
-cp node_modules/@logicssoftwaregmbh/nodemon-alternative/nodemon-alternative.json ./nodemon-alternative.json
-```
+1. Copy the example configuration file into your project root as `nodemon-alternative.json`:
+   ```bash
+   cp node_modules/@logicssoftwaregmbh/nodemon-alternative/nodemon-alternative.json ./nodemon-alternative.json
+   ```
 
-2. Add to package.json:
+2. Adapt the configuration file according to your needs (see Configuration Options below).
+
+3. In your project's package.json, add a script like:
+   ```json
+   {
+     "scripts": {
+       "dev": "nodemon-alternative"
+     }
+   }
+   ```
+
+> Note: You can also supply a custom configuration file when starting nodemon-alternative:
+>
+> ```bash
+> nodemon-alternative --config ./my-custom-config.json
+> ```
+>
+> or
+>
+> ```bash
+> nodemon-alternative -c ./my-custom-config.json
+> ```
+
+## Configuration Options
+
+The configuration file (nodemon-alternative.json) supports the following parameters:
+
+- **script** (string, required): The entry point to run (e.g., "src/server.js")
+- **watch** (string | array): Files or directories to monitor for changes
+- **ignore** (string[] | string): Glob patterns for files to ignore. Use `**/node_modules/**` to ignore all node_modules directories and their contents
+- **delay** (object): Controls file change detection behavior
+  - **stabilityThreshold** (number): Time in ms to wait for file to settle
+  - **pollInterval** (number): Time in ms between polls
+
+`delay` object has two properties:
+
+- `stabilityThreshold` (Default: 500ms): Defines how long a file size must remain constant before the watcher emits an event. This helps ensure the file is completely written before triggering a restart. For example, when saving large files, the watcher will wait until the file size hasn't changed for 500ms before considering it "complete".
+
+- `pollInterval` (Default: 100ms): Specifies how frequently the watcher should check the file size when awaiting write completion. A lower value provides faster response but increases system load, while a higher value reduces system load but might delay detection of file completion.
+
+These settings are particularly important when watching large files or when dealing with editors that perform atomic writes.
+
+- **port** (number): The port your application runs on. This is crucial for proper port cleanup on Windows
+
+Example configuration:
 ```json
 {
-  "scripts": {
-    "dev": "nodemon-alternative"
-  }
+  "script": "src/server.js",
+  "watch": "src/**/*.{js,ts,json}",
+  "ignore": [
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/dist/**",
+    "**/coverage/**"
+  ],
+  "delay": {
+    "stabilityThreshold": 500,
+    "pollInterval": 100
+  },
+  "port": 3000
 }
 ```
 
