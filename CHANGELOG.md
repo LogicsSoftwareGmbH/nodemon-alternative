@@ -2,6 +2,10 @@
 
 All notable changes to the project will be documented in this file.
 
+## [1.0.7] - 2025-02-02
+### Added
+- SECURITY.md added
+
 ## [1.0.6] - 2025-02-02
 ### Changed
 - package.json: keywords updated

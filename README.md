@@ -129,3 +129,7 @@ MIT © Logics Software GmbH
 
 Logics Software GmbH
 <br>[https://www.logics-connect.de/](https://www.logics-connect.de/)
+
+## Changelog
+
+For a detailed history of changes, see the [CHANGELOG](https://github.com/LogicsSoftwareGmbH/nodemon-alternative/blob/main/CHANGELOG.md).
