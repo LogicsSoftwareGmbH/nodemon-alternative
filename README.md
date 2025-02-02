@@ -29,14 +29,14 @@ Note: If nodemon works well for your use case, especially on Unix-based systems,
 ## Installation
 
 ```bash
-npm install --save-dev @logicssoftwaregmbh/nodemon-alternative
+npm install --save-dev @logicssoftwarenpmjs/nodemon-alternative
 ```
 
 ## Quick Start
 
 1. Copy the example configuration file into your project root as `nodemon-alternative.json`:
    ```bash
-   cp node_modules/@logicssoftwaregmbh/nodemon-alternative/nodemon-alternative.json ./nodemon-alternative.json
+   cp node_modules/@logicssoftwarenpmjs/nodemon-alternative/nodemon-alternative.json ./nodemon-alternative.json
    ```
 
 2. Adapt the configuration file according to your needs (see Configuration Options below).

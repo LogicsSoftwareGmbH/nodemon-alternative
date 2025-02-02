@@ -2,6 +2,10 @@
 
 All notable changes to the project will be documented in this file.
 
+## [1.0.5] - 2025-02-02
+### Changed
+- package.json and README.md: renamed npmjs.com organization to @logicssoftwarenpmjs
+
 ## [1.0.4] - 2025-02-02
 ### Changed
 - README.md docs improved
