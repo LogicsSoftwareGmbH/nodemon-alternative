@@ -1,0 +1,53 @@
+{
+	"name": "@logicssoftwaregmbh/nodemon-alternative",
+	"version": "1.0.0",
+	"description": "A more aggressive Node.js process manager and file watcher with built-in Windows port management",
+	"type": "module",
+	"main": "src/index.js",
+	"bin": {
+		"nodemon-alternative": "./bin/cli.js"
+	},
+	"files": [
+		"bin",
+		"src",
+		"README.md",
+		"LICENSE",
+		"example.nodemon-alternative.json"
+	],
+	"scripts": {
+		"start": "node bin/cli.js"
+	},
+	"keywords": [
+		"nodemon",
+		"development",
+		"restart",
+		"reload",
+		"windows",
+		"port-management",
+		"process-manager",
+		"file-watcher"
+	],
+	"author": {
+		"name": "Logics Software GmbH",
+		"email": "info@logics.de",
+		"url": "https://www.logics-connect.de/"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LogicsSoftwareGmbH/nodemon-alternative.git"
+	},
+	"bugs": {
+		"url": "https://github.com/LogicsSoftwareGmbH/nodemon-alternative/issues"
+	},
+	"homepage": "https://github.com/LogicsSoftwareGmbH/nodemon-alternative#readme",
+	"dependencies": {
+		"chokidar": "^3.6.0"
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
