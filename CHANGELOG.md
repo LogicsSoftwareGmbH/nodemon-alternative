@@ -2,6 +2,10 @@
 
 All notable changes to the project will be documented in this file.
 
+## [1.0.2] - 2025-02-02
+### Added
+- Automatic publishing the package to the https://www.npmjs.com/ registry via Github.com action
+
 ## [1.0.1] - 2025-02-02
 ### Fixed
 - Bugfix: Renamed "example.nodemon-alternative.json" to "nodemon-alternative.json" in package.json "files"
@@ -16,4 +20,4 @@ All notable changes to the project will be documented in this file.
 - Updated README documentation to reflect testing on Windows 10.
 
 ### Planned
-- Setup CI/CD pipeline for npm publishing.
+(currently empty)
