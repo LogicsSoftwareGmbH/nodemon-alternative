@@ -2,6 +2,11 @@
 
 All notable changes to the project will be documented in this file.
 
+## [1.0.3] - 2025-02-02
+### Added
+- Added package-lock.json file
+- Added .gitignore file
+
 ## [1.0.2] - 2025-02-02
 ### Added
 - Automatic publishing the package to the https://www.npmjs.com/ registry via Github.com action
