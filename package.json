@@ -1,6 +1,6 @@
 {
 	"name": "@logicssoftwarenpmjs/nodemon-alternative",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "A more aggressive Node.js process manager and file watcher with built-in Windows port management",
 	"type": "module",
 	"main": "src/index.js",
@@ -19,13 +19,21 @@
 	},
 	"keywords": [
 		"nodemon",
+		"nodemon-alternative",
+		"nodemon alternative",
+		"nodemon alternatives",
+		"alternative to nodemon",
+		"nodejs auto reload",
+		"nodejs server reload",
+		"nodejs file watcher",
+		"file change reload",
+		"server restart",
+		"live reload",
+		"hot reload",
+		"process manager",
+		"windows dev tools",
 		"development",
-		"restart",
-		"reload",
-		"windows",
-		"port-management",
-		"process-manager",
-		"file-watcher"
+		"nodejs"
 	],
 	"author": {
 		"name": "Logics Software GmbH",
