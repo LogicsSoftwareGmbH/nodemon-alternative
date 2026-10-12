@@ -2,6 +2,11 @@
 
 All notable changes to the project will be documented in this file.
 
+## [1.0.11] - 2026-10-12
+### Deprecated
+- The package is deprecated and no longer maintained. Use Node.js' built-in watch mode (`node --watch`) instead; see the migration guide in README.md.
+- Known issue that will not be fixed: `npm audit` reports GHSA-vfj7-8cjw-p6xm in `braces` (via `chokidar` 3.x). No patched `braces` release exists, and fixing it would require a breaking upgrade to `chokidar` 4+.
+
 ## [1.0.7] - 2025-02-02
 ### Added
 - SECURITY.md added

@@ -1,5 +1,53 @@
 # nodemon-alternative
 
+> [!WARNING]
+> **This package is deprecated and no longer maintained.**
+> Node.js now ships a built-in watch mode (`node --watch`, stable since Node 22 / 20.13), which covers what this tool was built for.
+> Please migrate using the guide below. No further updates, including security fixes, will be released.
+
+## Migration
+
+Replace the `nodemon-alternative` script in your `package.json` with Node's built-in watch mode:
+
+```json
+{
+  "scripts": {
+    "dev": "node --watch-path=./src src/server.js"
+  }
+}
+```
+
+If you also relied on the aggressive port cleanup, kill whatever holds the port before starting, e.g. with [kill-port](https://www.npmjs.com/package/kill-port) (`npm install --save-dev kill-port`):
+
+```json
+{
+  "scripts": {
+    "dev": "kill-port 3000 && node --watch-path=./src src/server.js"
+  }
+}
+```
+
+Mapping of `nodemon-alternative.json` options:
+
+nodemon-alternative | Node.js built-in
+--------------------|-----------------
+`script` | the entry file passed to `node`
+`watch` | `--watch-path=<dir>` (repeatable); plain `--watch` watches the entry file and its imports
+`ignore` | no direct equivalent; only watch the directories you need
+`delay` | not needed
+`port` | `kill-port <port>` before starting (see above)
+
+Afterwards, remove the package and its config file:
+
+```bash
+npm uninstall @logicssoftwarenpmjs/nodemon-alternative
+rm nodemon-alternative.json
+```
+
+---
+
+The original documentation follows for existing users.
+
 A Windows-focused alternative to nodemon's legacy watch mode, designed specifically for aggressive port management and process cleanup on Windows systems.
 
 ## Why Another Tool?
@@ -113,13 +161,6 @@ Consider using nodemon-alternative if:
 - nodemon's process management isn't working well for you
 
 Otherwise, the original nodemon likely remains your best choice.
-
-## Contributing
-
-Contributions are welcome, especially:
-- Linux/macOS support
-- Testing docker, other shells etc.
-- Bug fixes
 
 ## License
 
